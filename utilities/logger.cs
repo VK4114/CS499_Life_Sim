@@ -38,8 +38,14 @@ namespace Utilities
         {
             m_componentName = componentName;
             m_levelFilter = (Level)GlobalLogLevel;
-            Directory.CreateDirectory("../logs");
-            string logFileName = $"../logs/{componentName}.log";
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string solutionRoot = Path.GetFullPath(Path.Combine(baseDir, "..", "..", ".."));
+            string logDir = Path.Combine(solutionRoot, "logs");
+            Directory.CreateDirectory(logDir);
+            
+            string logFileName = Path.Combine(logDir, $"{componentName}.log");
+            
+            
 
             if(componentName != "Default")
             {

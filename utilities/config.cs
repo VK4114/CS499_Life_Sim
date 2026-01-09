@@ -11,7 +11,7 @@ namespace Utilities
         private readonly Dictionary<string, object?> m_configMap = new();
         private readonly string m_filePath;
         private readonly string m_category;
-        private static SemaphoreSlim m_fileLock = new(1, 1);
+        private readonly SemaphoreSlim m_fileLock = new(1, 1);
         private const string m_DefaultConfigDir = "../json";
 
         public Config(string configFilename = null, string category = "default")
