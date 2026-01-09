@@ -42,7 +42,7 @@ namespace Utilities
         public bool ReadConfig<T>(string key, out T? value)
         {
             value = default;
-          
+        
             if(!m_configMap.TryGetValue(key, out var obj))
             {
                 return false;
@@ -54,17 +54,8 @@ namespace Utilities
                     value = JsonSerializer.Deserialize<T>(jsonElement.GetRawText());
                     return true;
                 }
-                else
-                {
-                    var converted = Convert.ChangeType(obj, typeof(T));
-                    if(converted is null)
-                    {
-                        return false;
-                    }
-                    value = (T)converted;
-                }
-                return true;
-        }
+                return false; // Shouldn't happen if everything is JsonElement
+            }
             catch
             {
                 return false;
@@ -72,7 +63,7 @@ namespace Utilities
         }
         public bool WriteConfig<T>(string key, T value)
         {
-            m_configMap[key] = value;
+            m_configMap[key] = JsonSerializer.SerializeToElement(value);
             return true;
         }
         public bool ReadConfigOrUseDefault<T>(string key, out T value, T defaultValue)
