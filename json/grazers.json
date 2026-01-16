@@ -1,0 +1,40 @@
+[
+  {
+    "id": "grazer_01",
+    "role": "grazer",
+
+    "energy": {
+      "initial": 20,
+      "max": 40,
+      "metabolism": 1.0
+    },
+
+    "movement": {
+      "speed": 5,
+      "sense_range": 4
+    },
+
+    "feeding": {
+      "plant_types": ["grass"],
+      "energy_gain": 10,
+      "cooldown": 3
+    },
+
+    "reproduction": {
+      "min_energy": 5,
+      "cost": 2,
+      "cooldown": 10
+    },
+
+    "age": {
+      "max": 5,
+      "maturity": 0.5
+    },
+
+    "evolution": {
+      "mutable_traits": ["metabolism", "speed"],
+      "mutation_rate": 0.05,
+      "mutation_strength": 0.1
+    }
+  }
+]

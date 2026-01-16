@@ -1,0 +1,83 @@
+[
+  {
+    "id": "predator_01",
+    "role": "predator",
+
+    "energy": {
+      "initial": 40,
+      "max": 120,
+      "metabolism": 1.5
+    },
+
+    "movement": {
+      "speed": 5,
+      "sense_range": 6
+    },
+
+    "predation": {
+      "prey_types": ["grazer_01"],
+      "hunting_strategy": "stalk_and_ambush",
+      "attack_cost": 5,
+      "energy_gain": 35,
+      "success_chance": 0.6
+    },
+
+    "reproduction": {
+      "min_energy": 40,
+      "cost": 20,
+      "cooldown": 20
+    },
+
+    "age": {
+      "max": 12,
+      "maturity": 1
+    },
+
+    "evolution": {
+      "mutable_traits": ["speed", "success_chance"],
+      "mutation_rate": 0.04,
+      "mutation_strength": 0.08
+    }
+  },
+
+  {
+    "id": "predator_02",
+    "role": "predator",
+
+    "energy": {
+      "initial": 20,
+      "max": 50,
+      "metabolism": 1.5
+    },
+
+    "movement": {
+      "speed": 2,
+      "sense_range": 3
+    },
+
+    "predation": {
+      "prey_types": ["grazer_02"],
+      "hunting_strategy": "ambush_and_chase",
+      "attack_cost": 5,
+      "energy_gain": 15,
+      "success_chance": 0.7
+    },
+
+    "reproduction": {
+      "min_energy": 30,
+      "cost": 20,
+      "cooldown": 10
+    },
+
+    "age": {
+      "max": 30,
+      "maturity": 2
+    },
+
+    "evolution": {
+      "mutable_traits": ["metabolism", "attack_cost"],
+      "mutation_rate": 0.04,
+      "mutation_strength": 0.08
+    }
+  }
+]

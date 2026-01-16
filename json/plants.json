@@ -1,0 +1,17 @@
+[
+    {
+        "id": "grass",
+        "role": "plant",
+
+        "energy":
+        {
+            "max": 5,
+            "regrowth_rate": 1
+        },
+        "reproduction":
+        {
+            "method": "seeds",
+            "reproduction_range": 1
+        }
+    }
+]
